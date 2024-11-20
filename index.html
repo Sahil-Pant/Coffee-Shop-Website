@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhaichaara Coffee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <i class="fas fa-mug-hot"></i>
+                <span>Bhaichaara</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#about">About</a>
+                <a href="auth.html" class="auth-link">Login</a>
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home">
+        <div class="hero">
+            <h1>Welcome to Bhaichaara Cafe</h1>
+            <p>Where every sip tells a story of friendship</p>
+
+        </div>
+    </section>
+
+    <section id="menu" class="menu">
+        <h2 class="section-title">Our Signature Menu</h2>
+        <div class="swiper menu-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="product" data-price="299">
+                        <div class="product-image">
+                            <img src="assets\images\img1.jpg"
+                                alt="Espresso">
+                        </div>
+                        <div class="product-info">
+                            <h3>Espresso</h3>
+                            <p class="price">₹299</p>
+                            <p class="description">Rich and bold single shot of pure coffee essence</p>
+                            <button onclick="addToCart(this)" class="add-to-cart">
+                                <i class="fas fa-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="product" data-price="349">
+                        <div class="product-image">
+                            <img src="assets\images\img2.jpg" alt="Latte">
+                        </div>
+                        <div class="product-info">
+                            <h3>Latte</h3>
+                            <p class="price">₹349</p>
+                            <p class="description">Smooth espresso with steamed milk and light foam</p>
+                            <button onclick="addToCart(this)" class="add-to-cart">
+                                <i class="fas fa-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="product" data-price="399">
+                        <div class="product-image">
+                            <img src="assets\images\img3.jpg"
+                                alt="Cappuccino">
+                        </div>
+                        <div class="product-info">
+                            <h3>Cappuccino</h3>
+                            <p class="price">₹399</p>
+                            <p class="description">Perfect balance of espresso, steamed milk, and foam</p>
+                            <button onclick="addToCart(this)" class="add-to-cart">
+                                <i class="fas fa-plus"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-cart" onclick="toggleCart()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <h3>Total: ₹<span id="cart-total">0</span></h3>
+                <button onclick="checkout()" class="checkout-btn">
+                    <i class="fas fa-shopping-bag"></i> Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2 class="section-title">Our Story</h2>
+                <div class="about-coffee"><p>Founded on the principles of brotherhood and community, Bhaichaara Coffee brings you the finest
+                    coffee experiences. Every cup we serve is crafted with love and precision, creating moments of joy
+                    and connection.</p>
+                    <br>
+                    <p>We believe in the power of conversation and connection. Our space is designed to bring people
+                        together, creating moments of joy and friendship.</p></div>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-coffee"></i>
+                        <h3>Premium Beans</h3>
+                        <p>Sourced from the finest estates</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-users"></i>
+                        <h3>Community</h3>
+                        <p>Building bonds over coffee</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-heart"></i>
+                        <h3>Made with Love</h3>
+                        <p>Crafted to perfection</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> +91 123 456 7890</p>
+                <p><i class="fas fa-envelope"></i> hello@bhaichaara.coffee</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Hours</h3>
+                <p>Mon - Fri: 7am - 10pm</p>
+                <p>Sat - Sun: 8am - 11pm</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Bhaichaara Coffee. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <!-- Minified UMD bundle -->
+<script src="https://unpkg.com/split-type"></script>>
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
